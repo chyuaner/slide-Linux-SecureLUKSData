@@ -3,12 +3,9 @@ marp: true
 theme: default
 paginate: true
 footer: |
-    [[Github]](https://github.com/chyuaner/slide-Linux-SecureLUKSData) | [[PDF]](index.pdf) | [[PPTX]](index.pptx)
+    [[Github]](https://github.com/chyuaner/slide-Linux-SecureLUKSData) | [[PDF]](index.pdf) | [[PPTX]](index.pptx) | https://yuaner.tw/v9eR2y
 
 style: |
-    /* section {
-        background-color: #ccc;
-    } */
     section.lead h1, section.lead h2 {
         text-align: center;
     }
