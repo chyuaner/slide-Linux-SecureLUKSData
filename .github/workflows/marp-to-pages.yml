@@ -36,8 +36,11 @@ jobs:
 
       - name: Remove Marp fragment animations
         run: |
+          echo "Patching build/index.html to remove fragments..."
           sed -i 's/\s\+data-marpit-fragment="[^"]*"//g' build/index.html
           sed -i 's/\s\+data-bespoke-marp-fragment="[^"]*"//g' build/index.html
+          sed -i 's/?f=[0-9]*//g' build/index.html
+          sed -i '/bespoke.bullets/d' build/index.html
 
       - name: Marp Build (README.pdf)
         uses: docker://marpteam/marp-cli:v3.0.2
