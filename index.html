@@ -66,9 +66,9 @@ section.lead h1, section.lead h2 {
 <h1 id="%E9%9C%80%E6%B1%82">需求</h1>
 <p>我平常會隨時帶筆電外出，而且筆電硬碟裡面有放敏感資料（個人證件、公司機密...等等）</p>
 <ul>
-<li data-marpit-fragment="1">平常在作業系統設置登入認證（傳統密碼、指紋、人臉辨識...）</li>
-<li data-marpit-fragment="2">防止利用Live CD開機，繞過原先在主作業系統設置的登入認證，直接存取硬碟</li>
-<li data-marpit-fragment="3">也要防止硬碟被拔除，接上其他台電腦就能直接存取硬碟</li>
+<li>平常在作業系統設置登入認證（傳統密碼、指紋、人臉辨識...）</li>
+<li>防止利用Live CD開機，繞過原先在主作業系統設置的登入認證，直接存取硬碟</li>
+<li>也要防止硬碟被拔除，接上其他台電腦就能直接存取硬碟</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-marpit-fragments="4" data-paginate="true" data-theme="default" data-style="/* section {
@@ -97,10 +97,10 @@ section.lead h1, section.lead h2 {
 <h1 id="%E9%80%99%E5%80%8B%E9%9C%80%E6%B1%82%E5%B0%87%E6%9C%83%E7%94%A8%E5%88%B0">這個需求，將會用到</h1>
 <p>硬碟加密+綁定這台電腦開機</p>
 <ul>
-<li data-marpit-fragment="1">LUKS: 全分割區加密</li>
-<li data-marpit-fragment="2">TPM: 為了與LUKS綁定做自動解鎖</li>
-<li data-marpit-fragment="3">UKI .efi: 製作.efi直接開機啟動檔，從根本上鎖死cmdline開機參數帶入</li>
-<li data-marpit-fragment="4">SecureBoot: 產生UKI時就順便簽名上SecureBoot</li>
+<li>LUKS: 全分割區加密</li>
+<li>TPM: 為了與LUKS綁定做自動解鎖</li>
+<li>UKI .efi: 製作.efi直接開機啟動檔，從根本上鎖死cmdline開機參數帶入</li>
+<li>SecureBoot: 產生UKI時就順便簽名上SecureBoot</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-marpit-fragments="2" data-paginate="true" data-theme="default" data-style="/* section {
@@ -128,8 +128,8 @@ section.lead h1, section.lead h2 {
 ;">
 <h1 id="%E5%85%88%E8%AA%AA%E9%80%99%E4%B8%A6%E4%B8%8D%E6%98%AF%E4%BB%80%E9%BA%BC%E6%96%B0%E7%A9%8E%E7%9A%84%E6%9D%B1%E8%A5%BF">先說這並不是什麼新穎的東西...</h1>
 <ul>
-<li data-marpit-fragment="1">Apple電腦: T2安全晶片(or M處理器整合) + FileVault</li>
-<li data-marpit-fragment="2">Windows電腦: TPM + Bitlocker</li>
+<li>Apple電腦: T2安全晶片(or M處理器整合) + FileVault</li>
+<li>Windows電腦: TPM + Bitlocker</li>
 </ul>
 <p>而且條件達成就會<strong>預設啟用</strong></p>
 <p>反觀Linux......<br />
@@ -163,8 +163,8 @@ section.lead h1, section.lead h2 {
 ;">
 <h2 id="%E8%A7%A3%E5%AF%86%E9%87%91%E9%91%B0%E9%81%BA%E5%A4%B1%E9%A2%A8%E9%9A%AA">解密金鑰遺失風險</h2>
 <ul>
-<li data-marpit-fragment="1">Apple電腦：反正主硬碟直接焊死在主機板不能更換，幾乎不會有和存有金鑰的晶片分開的情況。</li>
-<li data-marpit-fragment="2">Windows電腦: 預設啟用條件包含<strong>要登入Microsoft帳號</strong>，而且Win11正常安裝流程就幾乎強制要求使用者登入。然後安裝完成就會自動上傳解密金鑰到Microsoft線上帳號。所以金鑰遺失還能從Microsoft線上帳號補救。</li>
+<li>Apple電腦：反正主硬碟直接焊死在主機板不能更換，幾乎不會有和存有金鑰的晶片分開的情況。</li>
+<li>Windows電腦: 預設啟用條件包含<strong>要登入Microsoft帳號</strong>，而且Win11正常安裝流程就幾乎強制要求使用者登入。然後安裝完成就會自動上傳解密金鑰到Microsoft線上帳號。所以金鑰遺失還能從Microsoft線上帳號補救。</li>
 </ul>
 <p>Linux... 都手動處理了，請自己好好保管好，保險一點就多設第二、第三種解鎖途徑。</p>
 <p><strong>絕對絕對！！！不要拿TPM當作解鎖的唯一途徑！！！</strong><br />
@@ -195,10 +195,10 @@ section.lead h1, section.lead h2 {
 ;">
 <h1 id="%E5%85%88%E8%AA%AAtpm-%E5%92%8C-secureboot-%E6%98%AF%E5%85%A9%E5%9B%9E%E4%BA%8B">先說：TPM 和 SecureBoot 是兩回事！！</h1>
 <ul>
-<li data-marpit-fragment="1">TPM (Trusted Platform Module): 必定跟著<strong>這台</strong>電腦，私鑰在TPM裡面沒有任何方法可以直接匯出、拿走，可以和硬碟加密綁定，確認只有這台電腦可以解鎖。</li>
-<li data-marpit-fragment="2">SecureBoot: 只允許有正確簽名的作業系統才能啟動，不然會直接被主機板拒絕啟動。
+<li>TPM (Trusted Platform Module): 必定跟著<strong>這台</strong>電腦，私鑰在TPM裡面沒有任何方法可以直接匯出、拿走，可以和硬碟加密綁定，確認只有這台電腦可以解鎖。</li>
+<li>SecureBoot: 只允許有正確簽名的作業系統才能啟動，不然會直接被主機板拒絕啟動。
 <ul>
-<li data-marpit-fragment="3">雖然我還是覺得很廢，只是大幅添增麻煩，隨便拿有SecureBoot的Live CD就可以用了。不過就因為這個麻煩，所以...有開還是會安全很多。</li>
+<li>雖然我還是覺得很廢，只是大幅添增麻煩，隨便拿有SecureBoot的Live CD就可以用了。不過就因為這個麻煩，所以...有開還是會安全很多。</li>
 </ul>
 </li>
 </ul>
@@ -231,17 +231,17 @@ section.lead h1, section.lead h2 {
 <p>開機流程：<br />
 BIOS → GRUB → 載入Linux過程<strong>詢問LUKS解鎖密碼</strong> → 進入作業系統<strong>詢問登入密碼</strong> → 進入桌面環境！！</p>
 <ul>
-<li data-marpit-fragment="1">LUKS 直接對硬碟重要分割區加密
+<li>LUKS 直接對硬碟重要分割區加密
 <ul>
-<li data-marpit-fragment="2">開機即要求輸入解鎖密碼</li>
-<li data-marpit-fragment="3">直接從根本上防止Live CD直接存取</li>
-<li data-marpit-fragment="4">防止硬碟改接到別台電腦上能直接存取</li>
+<li>開機即要求輸入解鎖密碼</li>
+<li>直接從根本上防止Live CD直接存取</li>
+<li>防止硬碟改接到別台電腦上能直接存取</li>
 </ul>
 </li>
-<li data-marpit-fragment="5">作業系統登入認證
+<li>作業系統登入認證
 <ul>
-<li data-marpit-fragment="6">LUKS成功解鎖開機以後，就不再有LUKS的防護了，後續還有暫時離開用的「鎖定畫面」、要更動到系統而需要root...等。</li>
-<li data-marpit-fragment="7">可綁定方便認證的指紋、人臉辨識</li>
+<li>LUKS成功解鎖開機以後，就不再有LUKS的防護了，後續還有暫時離開用的「鎖定畫面」、要更動到系統而需要root...等。</li>
+<li>可綁定方便認證的指紋、人臉辨識</li>
 </ul>
 </li>
 </ul>
@@ -296,8 +296,8 @@ section.lead h1, section.lead h2 {
 ;">
 <h2 id="%E5%B0%8D%E7%AD%96">對策</h2>
 <ul>
-<li data-marpit-fragment="1">TPM綁定LUKS，開機時確認是<strong>這台電腦</strong>就自動解鎖！通過認證！</li>
-<li data-marpit-fragment="2">開機後再由作業系統來做使用者認證</li>
+<li>TPM綁定LUKS，開機時確認是<strong>這台電腦</strong>就自動解鎖！通過認證！</li>
+<li>開機後再由作業系統來做使用者認證</li>
 </ul>
 <p>就使用體感來說：只需輸入一次密碼，還可以彈性用方便的指紋/人臉認證，又能兼顧資料安全！</p>
 </section>
@@ -326,18 +326,18 @@ section.lead h1, section.lead h2 {
 ;">
 <h1 id="luks%E7%A1%AC%E7%A2%9F%E5%88%86%E5%89%B2%E5%8D%80%E5%8A%A0%E5%AF%86">LUKS硬碟分割區加密</h1>
 <ul>
-<li data-marpit-fragment="1">
+<li>
 <p>要用TPM綁定，只能用LUKS2</p>
 </li>
-<li data-marpit-fragment="2">
+<li>
 <p>但GRUB只完整支援到LUKS1...</p>
 </li>
-<li data-marpit-fragment="3">
+<li>
 <p>對策:</p>
 <ul>
-<li data-marpit-fragment="4">分割不加密的 /boot (ext4) 分割區來放GRUB與Linux核心</li>
-<li data-marpit-fragment="5">開機時載入含LUKS解鎖功能的Linux核心之後，由Linux核心啟動程序來解鎖真正主要的LUKS2分割區</li>
-<li data-marpit-fragment="6">但是還是有破解漏洞... 後面會詳述</li>
+<li>分割不加密的 /boot (ext4) 分割區來放GRUB與Linux核心</li>
+<li>開機時載入含LUKS解鎖功能的Linux核心之後，由Linux核心啟動程序來解鎖真正主要的LUKS2分割區</li>
+<li>但是還是有破解漏洞... 後面會詳述</li>
 </ul>
 </li>
 </ul>
@@ -368,13 +368,13 @@ section.lead h1, section.lead h2 {
 <h1 id="luks1%E6%96%B9%E6%A1%88%E6%88%91%E4%B9%9F%E9%95%B7%E6%9C%9F%E7%94%A8%E9%81%8E">LUKS1方案我也長期用過</h1>
 <p>Manjaro Linux正常安裝流程中，有開啟硬碟加密選項，那安裝程式就會用LUKS1的方式處理。</p>
 <ul>
-<li data-marpit-fragment="1">
+<li>
 <p>LUKS1啟動方式：</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>BIOS → 載入GRUB過程中詢問LUKS解鎖密碼 → 進入GRUB選單 → 載入Linux核心 → 進入作業系統
 </code></pre>
 <p>(但無法綁定TPM自動解鎖，每次開機都得輸入兩次密碼。我那時筆電鍵盤還有點壞，造成密碼輸入很難過<img class="emoji" draggable="false" alt="😭" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f62d.svg" data-marp-twemoji=""/>)</p>
 </li>
-<li data-marpit-fragment="2">
+<li>
 <p>至於本次採用的LUKS2方式，會變成：</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>BIOS → 無加密進入GRUB選單 → 載入Linux核心過程中詢問LUKS密碼 → 進入作業系統
 </code></pre>
@@ -433,13 +433,13 @@ section.lead h1, section.lead h2 {
 <h1 id="tpm-trusted-platform-module">TPM Trusted Platform Module</h1>
 <p>需求上的主要目的：確認就是這一台電腦！！</p>
 <ul>
-<li data-marpit-fragment="1">
+<li>
 <p>私鑰在TPM晶片內無法匯出，無法被偽造</p>
 </li>
-<li data-marpit-fragment="2">
+<li>
 <p>可以設定PCR來決定嚴格程度</p>
 </li>
-<li data-marpit-fragment="3">
+<li>
 <p>現代電腦應該都有TPM晶片</p>
 </li>
 </ul>
@@ -469,16 +469,16 @@ section.lead h1, section.lead h2 {
 ;">
 <h2 id="tpm-pcr">TPM PCR</h2>
 <ul>
-<li data-marpit-fragment="1">
+<li>
 <p>PCR 7: 只會檢查SecureBoot開關，已實測若在Live CD環境下，也會因為符合此條件而造成自動解鎖<br />
 PS. 也呼應前面我所說的，SecureBoot其實有夠廢<img class="emoji" draggable="false" alt="😂" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f602.svg" data-marp-twemoji=""/></p>
 </li>
-<li data-marpit-fragment="2">
+<li>
 <p>PCR 4+5+7 （我現在在用的）</p>
 <ul>
-<li data-marpit-fragment="3">PCR 4: 檢查當前作業系統核心環境</li>
-<li data-marpit-fragment="4">PCR 5: GPT硬碟分割表有無被更動</li>
-<li data-marpit-fragment="5">PCR 7: 是否有更動SecureBoot開啟開關</li>
+<li>PCR 4: 檢查當前作業系統核心環境</li>
+<li>PCR 5: GPT硬碟分割表有無被更動</li>
+<li>PCR 7: 是否有更動SecureBoot開啟開關</li>
 </ul>
 </li>
 </ul>
@@ -510,12 +510,12 @@ section.lead h1, section.lead h2 {
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>sudo systemd-cryptenroll /dev/nvme1n1p3 --wipe-slot=tpm2 --tpm2-device=auto --tpm2-pcrs=4+5+7
 </code></pre>
 <ul>
-<li data-marpit-fragment="1">
+<li>
 <p>查看目前LUKS的認證途徑</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>sudo systemd-cryptenroll /dev/nvme1n1p3 
 </code></pre>
 </li>
-<li data-marpit-fragment="2">
+<li>
 <p>以原生luks的查詢指令</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>sudo cryptsetup luksDump /dev/nvme1n1p3 
 </code></pre>
@@ -574,14 +574,14 @@ section.lead h1, section.lead h2 {
 ;">
 <h1 id="%E5%8F%AF%E4%BB%A5%E9%80%8F%E9%81%8Ecmdline%E9%96%8B%E6%A9%9F%E5%8F%83%E6%95%B8%E7%B9%9E%E9%81%8E%E7%9A%84%E6%96%B9%E5%BC%8F">可以透過cmdline開機參數繞過的方式</h1>
 <ul>
-<li data-marpit-fragment="1">進入單人模式（一堆忘記root密碼的教學文章都是用這個解法）
+<li>進入單人模式（一堆忘記root密碼的教學文章都是用這個解法）
 <ul>
-<li data-marpit-fragment="2">但是可以透過改 <code>/etc/systemd/system.conf</code> or <code>rescue.service</code> or <code>/etc/shadow</code> 等設定檔的方式 ，來強制要求進入單人模式也要先通過root密碼認證</li>
+<li>但是可以透過改 <code>/etc/systemd/system.conf</code> or <code>rescue.service</code> or <code>/etc/shadow</code> 等設定檔的方式 ，來強制要求進入單人模式也要先通過root密碼認證</li>
 </ul>
 </li>
-<li data-marpit-fragment="3">利用 <code>init=/bin/bash</code> 繞過任何程序，直接進入shell
+<li>利用 <code>init=/bin/bash</code> 繞過任何程序，直接進入shell
 <ul>
-<li data-marpit-fragment="4"><img class="emoji" draggable="false" alt="💣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f4a3.svg" data-marp-twemoji=""/> <strong>完全無解！</strong> 完全沒有中間環節可以強制加入登入認證。</li>
+<li><img class="emoji" draggable="false" alt="💣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f4a3.svg" data-marp-twemoji=""/> <strong>完全無解！</strong> 完全沒有中間環節可以強制加入登入認證。</li>
 </ul>
 </li>
 </ul>
@@ -616,17 +616,17 @@ section.lead h1, section.lead h2 {
 <h2 id="%E4%BD%A0%E5%8F%AF%E8%83%BD%E6%9C%83%E6%83%B3%E5%88%B0%E9%8E%96%E6%AD%BBcmdline%E7%9A%84%E8%A7%A3%E6%B3%95">你可能會想到鎖死cmdline的解法...</h2>
 <p>針對更前面的環節：</p>
 <ul>
-<li data-marpit-fragment="1">GRUB鎖上？
+<li>GRUB鎖上？
 <ul>
-<li data-marpit-fragment="2">你要多記GRUB密碼，而且因為GRUB是安裝在未加密 /boot 分割區，可以透過Live CD直接修改 /boot 內容修改 grub.cfg來強行加入惡意參數。</li>
+<li>你要多記GRUB密碼，而且因為GRUB是安裝在未加密 /boot 分割區，可以透過Live CD直接修改 /boot 內容修改 grub.cfg來強行加入惡意參數。</li>
 </ul>
 </li>
-<li data-marpit-fragment="3">BIOS鎖上？
+<li>BIOS鎖上？
 <ul>
-<li data-marpit-fragment="4">一樣你得多記BIOS密碼，而且硬碟拔到別台電腦就可以直接修改未加密 /boot 分割區內容，又會回到上面的問題。</li>
+<li>一樣你得多記BIOS密碼，而且硬碟拔到別台電腦就可以直接修改未加密 /boot 分割區內容，又會回到上面的問題。</li>
 </ul>
 </li>
-<li data-marpit-fragment="5">那連同GRUB也一起加密...? 恩，前面有說GRUB還不支援LUKS2，LUKS1又不能綁TPM。</li>
+<li>那連同GRUB也一起加密...? 恩，前面有說GRUB還不支援LUKS2，LUKS1又不能綁TPM。</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-marpit-fragments="6" data-paginate="true" data-theme="default" data-style="/* section {
@@ -655,16 +655,16 @@ section.lead h1, section.lead h2 {
 <h1 id="uki-unified-kernel-image">UKI Unified kernel image</h1>
 <p>UKI會將 Linux initramfs + vmlinuz + ucode整個打包，合併成一個 .efi 映像檔</p>
 <ul>
-<li data-marpit-fragment="1">不需經過GRUB這類的開機起動器引導，直接由BIOS就直接啟動Linux作業系統
+<li>不需經過GRUB這類的開機起動器引導，直接由BIOS就直接啟動Linux作業系統
 <ul>
-<li data-marpit-fragment="2">不過如果喜歡GRUB的話，還是可以由GRUB引導</li>
-<li data-marpit-fragment="3">但僅是理論，是因為若要啟用SecureBoot，情況又會不同，後述。</li>
+<li>不過如果喜歡GRUB的話，還是可以由GRUB引導</li>
+<li>但僅是理論，是因為若要啟用SecureBoot，情況又會不同，後述。</li>
 </ul>
 </li>
-<li data-marpit-fragment="4">從根本上直接把cmdline鎖死，不接受任何外來開機參數</li>
-<li data-marpit-fragment="5">打包後還可以綁定加上簽章，進一步的支援SecureBoot開機！！
+<li>從根本上直接把cmdline鎖死，不接受任何外來開機參數</li>
+<li>打包後還可以綁定加上簽章，進一步的支援SecureBoot開機！！
 <ul>
-<li data-marpit-fragment="6">這就是我說，我本來沒有想要處理SecureBoot，但到了這一步就想說都已經這麼順便了，就來順便處理吧～</li>
+<li>這就是我說，我本來沒有想要處理SecureBoot，但到了這一步就想說都已經這麼順便了，就來順便處理吧～</li>
 </ul>
 </li>
 </ul>
@@ -695,9 +695,9 @@ section.lead h1, section.lead h2 {
 <h1 id="%E9%97%9C%E6%96%BCsecureboot">關於SecureBoot...</h1>
 <p>順便讓我抱怨一下，SecureBoot真的是個很廢的東西...</p>
 <ul>
-<li data-marpit-fragment="1">SecureBoot真的非常難搞，而且花了一整天or以上的力氣處理好，換來的效益就只是多了看到 <code>Secure Boot: enabled (deployed)</code> 字樣，好爽 好棒棒<img class="emoji" draggable="false" alt="🫠" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1fae0.svg" data-marp-twemoji=""/></li>
-<li data-marpit-fragment="2">SecureBoot只能擋住不正常的作業系統被載入。但是作業系統載入後就不關SecureBoot的事了。在作業系統內遇到惡意軟體，該中的毒還是會中。</li>
-<li data-marpit-fragment="3">SecureBoot不會保護你的資料安全，拿有SecureBoot簽名的Live CD開機，若你原本就沒有把硬碟鎖好，該被亂搞的還是會被搞。</li>
+<li>SecureBoot真的非常難搞，而且花了一整天or以上的力氣處理好，換來的效益就只是多了看到 <code>Secure Boot: enabled (deployed)</code> 字樣，好爽 好棒棒<img class="emoji" draggable="false" alt="🫠" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1fae0.svg" data-marp-twemoji=""/></li>
+<li>SecureBoot只能擋住不正常的作業系統被載入。但是作業系統載入後就不關SecureBoot的事了。在作業系統內遇到惡意軟體，該中的毒還是會中。</li>
+<li>SecureBoot不會保護你的資料安全，拿有SecureBoot簽名的Live CD開機，若你原本就沒有把硬碟鎖好，該被亂搞的還是會被搞。</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-marpit-fragments="3" data-paginate="true" data-theme="default" data-style="/* section {
@@ -725,10 +725,10 @@ section.lead h1, section.lead h2 {
 ;">
 <h1 id="%E7%94%A2%E5%87%BAuki%E5%89%8D%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%8B">產出UKI前要做的事</h1>
 <ul>
-<li data-marpit-fragment="1">開機參數要先設定好在 <code>/etc/kernel/cmdline</code>  （因為UKI .efi啟動不再依賴GRUB等外來開機參數，而且會直接鎖死）
+<li>開機參數要先設定好在 <code>/etc/kernel/cmdline</code>  （因為UKI .efi啟動不再依賴GRUB等外來開機參數，而且會直接鎖死）
 <ul>
-<li data-marpit-fragment="2">可直接把GRUB的<code>GRUB_CMDLINE_LINUX_DEFAULT</code>抄過來</li>
-<li data-marpit-fragment="3">有上LUKS加密的話，不能依賴 <code>/etc/crypttab</code> ，一定要把完整的加密掛載資訊全寫進 <code>/etc/kernel/cmdline</code> 裡（我在這個坑踩非常久<img class="emoji" draggable="false" alt="🥲" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f972.svg" data-marp-twemoji=""/>）</li>
+<li>可直接把GRUB的<code>GRUB_CMDLINE_LINUX_DEFAULT</code>抄過來</li>
+<li>有上LUKS加密的話，不能依賴 <code>/etc/crypttab</code> ，一定要把完整的加密掛載資訊全寫進 <code>/etc/kernel/cmdline</code> 裡（我在這個坑踩非常久<img class="emoji" draggable="false" alt="🥲" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f972.svg" data-marp-twemoji=""/>）</li>
 </ul>
 </li>
 </ul>
@@ -758,9 +758,9 @@ section.lead h1, section.lead h2 {
 ;">
 <h1 id="%E7%94%A2%E5%87%BA-efi-%E7%9A%84%E6%96%B9%E5%BC%8F">產出 .efi 的方式：</h1>
 <ul>
-<li data-marpit-fragment="1">自行手動下命令產出</li>
-<li data-marpit-fragment="2">掛上mkinitcpio/dracut hook，在日後安裝/升級Linux核心的時候，就自動產出對應的UKI</li>
-<li data-marpit-fragment="3">產出 .efi 後，再來看你要不要順便在.efi加上簽名，這樣就可以啟用SecureBoot。</li>
+<li>自行手動下命令產出</li>
+<li>掛上mkinitcpio/dracut hook，在日後安裝/升級Linux核心的時候，就自動產出對應的UKI</li>
+<li>產出 .efi 後，再來看你要不要順便在.efi加上簽名，這樣就可以啟用SecureBoot。</li>
 </ul>
 <p><img src="img/Screenshot_20250605_102509.png" alt="" /></p>
 </section>
@@ -792,15 +792,15 @@ section.lead h1, section.lead h2 {
 &lt;div&gt;
 <h2 id="%E9%80%8F%E9%81%8Eshim%E5%B1%A4">透過shim層</h2>
 <ul>
-<li data-marpit-fragment="1">對BIOS來說，是對shim啟動，然後由shim去啟動GRUB</li>
-<li data-marpit-fragment="2">shim層自帶Microsoft簽名，可直接用於多數主機板，不需要額外更改BIOS設定</li>
+<li>對BIOS來說，是對shim啟動，然後由shim去啟動GRUB</li>
+<li>shim層自帶Microsoft簽名，可直接用於多數主機板，不需要額外更改BIOS設定</li>
 </ul>
 &lt;/div&gt;
 &lt;div&gt;
 <h2 id="%E4%B8%8D%E7%B6%93%E9%81%8E%E4%B8%AD%E4%BB%8B%E5%B1%A4%E7%94%B1bios%E7%9B%B4%E6%8E%A5%E5%95%9F%E5%8B%95">不經過中介層，由BIOS直接啟動</h2>
 <ul>
-<li data-marpit-fragment="3">需要自行進BIOS設定，然後把你的簽名匯入進BIOS白名單</li>
-<li data-marpit-fragment="4">前提是：BIOS設定必須要有選項可以讓你自行匯入簽名</li>
+<li>需要自行進BIOS設定，然後把你的簽名匯入進BIOS白名單</li>
+<li>前提是：BIOS設定必須要有選項可以讓你自行匯入簽名</li>
 </ul>
 &lt;/div&gt;
 </section>
@@ -832,8 +832,8 @@ section.lead h1, section.lead h2 {
 <li>建立MOK簽章（以 <code>openssl req -newkey ...</code> 的方式）</li>
 <li>使用 sbsign 為你的 .efi 與 initramfs加入簽名
 <ul>
-<li data-marpit-fragment="1"><code>sbsign --key /usr/share/secureboot/keys/MOK.key --cert /usr/share/secureboot/keys/MOK.crt --output &lt;來源.efi路徑&gt; &lt;產出.efi路徑&gt;</code></li>
-<li data-marpit-fragment="2">也可以在手動ukify產UKI .efi的時候就直接指定你的簽章</li>
+<li><code>sbsign --key /usr/share/secureboot/keys/MOK.key --cert /usr/share/secureboot/keys/MOK.crt --output &lt;來源.efi路徑&gt; &lt;產出.efi路徑&gt;</code></li>
+<li>也可以在手動ukify產UKI .efi的時候就直接指定你的簽章</li>
 </ul>
 </li>
 <li>進入shim MOK Manger / BIOS SecureBoot設定，把你的簽章匯入</li>
@@ -870,7 +870,7 @@ section.lead h1, section.lead h2 {
 </code></pre>
 <h2 id="%E5%8A%A0%E5%85%A5%E8%87%B3grub%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE">加入至GRUB開機選單</h2>
 <ul>
-<li data-marpit-fragment="1">手動編輯 <code>/etc/grub.d/40_custom</code> 檔案，加入選單，以chainloader的方式啟動 .efi 檔案開機</li>
+<li>手動編輯 <code>/etc/grub.d/40_custom</code> 檔案，加入選單，以chainloader的方式啟動 .efi 檔案開機</li>
 </ul>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>menuentry &quot;Manjaro Linux (UKI linux-6.12.28-1)&quot; --class manjaro {
     insmod fat
@@ -967,8 +967,8 @@ section.lead h1, section.lead h2 {
 <h1 id="%E6%94%B9%E4%BB%A5uki%E6%A8%A1%E5%BC%8F%E7%82%BA%E9%A0%90%E8%A8%AD%E9%96%8B%E6%A9%9F%E4%BB%A5%E5%BE%8C%E9%82%A3%E5%82%B3%E7%B5%B1initramfs%E6%A8%A1%E5%BC%8F%E8%A6%81">改以UKI模式為預設開機以後，那傳統initramfs模式要？</h1>
 <p>UKI .efi 基本上就是把cmdline完全封死！不接受任何外來開機參數！</p>
 <ul>
-<li data-marpit-fragment="1">最安全最直接的辦法，就是直接把 <code>/etc/grub.d/10_linux</code> 停用掉，把 /boot/ 裡面和 initramfs, vmlinuz等相關檔案都刪掉，完全只由 .efi 檔案開機。但這樣就封死fallback — 系統壞掉時能臨時處理的路了。</li>
-<li data-marpit-fragment="2">或是多製作fallback專用的UKI .efi（不過依然不能由GRUB下cmdline，我覺得面對一堆千奇百怪的狀況，修復用途還不能自訂cmdline就沒有實質意義）</li>
+<li>最安全最直接的辦法，就是直接把 <code>/etc/grub.d/10_linux</code> 停用掉，把 /boot/ 裡面和 initramfs, vmlinuz等相關檔案都刪掉，完全只由 .efi 檔案開機。但這樣就封死fallback — 系統壞掉時能臨時處理的路了。</li>
+<li>或是多製作fallback專用的UKI .efi（不過依然不能由GRUB下cmdline，我覺得面對一堆千奇百怪的狀況，修復用途還不能自訂cmdline就沒有實質意義）</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-marpit-fragments="4" data-paginate="true" data-background-size="contain" data-background-position="220% 0%" data-theme="default" data-style="/* section {
@@ -997,10 +997,10 @@ section.lead h1, section.lead h2 {
 <h1 id="%E6%94%B9%E4%BB%A5uki%E6%A8%A1%E5%BC%8F%E7%82%BA%E9%A0%90%E8%A8%AD%E9%96%8B%E6%A9%9F%E4%BB%A5%E5%BE%8C%E9%82%A3%E5%82%B3%E7%B5%B1initramfs%E6%A8%A1%E5%BC%8F%E8%A6%81-1">改以UKI模式為預設開機以後，那傳統initramfs模式要？</h1>
 <h2 id="%E6%88%91%E7%9A%84%E5%81%9A%E6%B3%95%E6%98%AF">我的做法是：</h2>
 <ul>
-<li data-marpit-fragment="1">UKI模式 與 傳統initramfs模式並存！！</li>
-<li data-marpit-fragment="2">對TPM PCR來說，這兩個是不同的環境。（前提是PCR規則不要只用PCR=7）</li>
-<li data-marpit-fragment="3">可以把cmdline鎖死的<strong>UKI模式，拿來與TPM+LUKS綁定用來開機自動解鎖</strong>。</li>
-<li data-marpit-fragment="4">若系統故障需要臨時下cmdline處理的話，就使用傳統initramfs模式。反正在傳統模式下，就算以開機參數強行繞過作業系統認證這層，但因為此模式不在TPM PCR接受的環境下，必定會先觸發LUKS的詢問解鎖傳統密碼擋下。</li>
+<li>UKI模式 與 傳統initramfs模式並存！！</li>
+<li>對TPM PCR來說，這兩個是不同的環境。（前提是PCR規則不要只用PCR=7）</li>
+<li>可以把cmdline鎖死的<strong>UKI模式，拿來與TPM+LUKS綁定用來開機自動解鎖</strong>。</li>
+<li>若系統故障需要臨時下cmdline處理的話，就使用傳統initramfs模式。反正在傳統模式下，就算以開機參數強行繞過作業系統認證這層，但因為此模式不在TPM PCR接受的環境下，必定會先觸發LUKS的詢問解鎖傳統密碼擋下。</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-background-size="contain" data-background-position="220% 0%" data-theme="default" data-style="/* section {
@@ -1053,8 +1053,8 @@ section.lead h1, section.lead h2 {
 ;">
 <h1 id="%E8%99%95%E7%90%86%E5%89%8D%E7%9A%84%E7%8B%80%E6%B3%81">處理前的狀況</h1>
 <ul>
-<li data-marpit-fragment="1">已拿整顆硬碟，以正常安裝流程安裝Manjaro Linux</li>
-<li data-marpit-fragment="2">當初只有三個<strong>未加密</strong>分割區: EFI ESP, BTRFS,SWAP</li>
+<li>已拿整顆硬碟，以正常安裝流程安裝Manjaro Linux</li>
+<li>當初只有三個<strong>未加密</strong>分割區: EFI ESP, BTRFS,SWAP</li>
 </ul>
 <p><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f3af.svg" data-marp-twemoji=""/> 目標：盡量在最小改動、不重灌乾淨系統的情況下，全部做到前面所說的LUKS2 + TPM + UKI .efi + SecureBoot</p>
 </section>
@@ -1115,10 +1115,10 @@ section.lead h1, section.lead h2 {
 ;">
 <h1 id="%E6%BA%96%E5%82%99%E9%9A%A8%E8%BA%AB%E7%A1%AC%E7%A2%9F%E6%8A%8A%E5%85%A8%E7%B3%BB%E7%B5%B1%E5%80%92%E5%87%BA%E4%BE%86">準備隨身硬碟，把全系統倒出來</h1>
 <ul>
-<li data-marpit-fragment="1">我以往都是用Clonezilla做全硬碟映像檔備份，但...</li>
-<li data-marpit-fragment="2">本次需求需要製作LUKS分割區，LUKS<strong>需要額外空間</strong>存放加密資訊與認證資訊，造成主分割區勢必要縮小
+<li>我以往都是用Clonezilla做全硬碟映像檔備份，但...</li>
+<li>本次需求需要製作LUKS分割區，LUKS<strong>需要額外空間</strong>存放加密資訊與認證資訊，造成主分割區勢必要縮小
 <ul>
-<li data-marpit-fragment="3">Clonezilla原則上只能還原到比原先容量更大的分割區</li>
+<li>Clonezilla原則上只能還原到比原先容量更大的分割區</li>
 </ul>
 </li>
 </ul>
@@ -1151,28 +1151,28 @@ section.lead h1, section.lead h2 {
 &lt;div&gt;
 處理前
 <ul>
-<li data-marpit-fragment="1">ESP</li>
-<li data-marpit-fragment="2">BTRFS
+<li>ESP</li>
+<li>BTRFS
 <ul>
-<li data-marpit-fragment="3">@</li>
-<li data-marpit-fragment="4">@home</li>
+<li>@</li>
+<li>@home</li>
 </ul>
 </li>
-<li data-marpit-fragment="5">SWAP</li>
+<li>SWAP</li>
 </ul>
 &lt;/div&gt;
 &lt;div&gt;
 處理後
 <ul>
-<li data-marpit-fragment="6">ESP</li>
-<li data-marpit-fragment="7">/boot</li>
-<li data-marpit-fragment="8">LUKS2
+<li>ESP</li>
+<li>/boot</li>
+<li>LUKS2
 <ul>
-<li data-marpit-fragment="9">BTRFS
+<li>BTRFS
 <ul>
-<li data-marpit-fragment="10">@</li>
-<li data-marpit-fragment="11">@home</li>
-<li data-marpit-fragment="12">@swap</li>
+<li>@</li>
+<li>@home</li>
+<li>@swap</li>
 </ul>
 </li>
 </ul>
@@ -1208,8 +1208,8 @@ section.lead h1, section.lead h2 {
 <ol>
 <li>主硬碟完全清空格式化（清空方式直接用nvme reset，順便恢復SSD壽命）
 <ul>
-<li data-marpit-fragment="1">進Parted Magic Live CD，裡面有工具可以nvme reset</li>
-<li data-marpit-fragment="2">進BIOS設定，由BIOS直接對SSD做nvme reset</li>
+<li>進Parted Magic Live CD，裡面有工具可以nvme reset</li>
+<li>進BIOS設定，由BIOS直接對SSD做nvme reset</li>
 </ul>
 </li>
 <li>重新分割硬碟，</li>
@@ -1293,8 +1293,8 @@ section.lead h1, section.lead h2 {
 <h1 id="%E5%85%B6%E4%BB%96-linux-distro-%E7%9A%84%E6%83%85%E6%B3%81">其他 Linux Distro 的情況</h1>
 <p>以下都是「聽說」</p>
 <ul>
-<li data-marpit-fragment="1">Fedora</li>
-<li data-marpit-fragment="2">Debian</li>
+<li>Fedora</li>
+<li>Debian</li>
 </ul>
 </section>
 <script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{constructor(){super(),this.svgPreserveAspectRatio="xMinYMid meet";const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver(((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()}))}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){var t,s,o,r,a;this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=null!==(t=this.shadowRoot.querySelector(`div[${e}]`))&&void 0!==t?t:void 0;const l=this.svg;this.svg=null!==(o=null===(s=this.wrapper)||void 0===s?void 0:s.querySelector(`svg[${i}]`))&&void 0!==o?o:void 0,this.svg!==l&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=null!==(a=null===(r=this.svg)||void 0===r?void 0:r.querySelector(`span[${n}]`))&&void 0!==a?a:void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame((()=>{t.style.display=""})))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){var t,e,i,n,s,o,r;let a=Math.ceil(null!==(e=null===(t=this.containerSize)||void 0===t?void 0:t.width)&&void 0!==e?e:0);const l=Math.ceil(null!==(n=null===(i=this.containerSize)||void 0===i?void 0:i.height)&&void 0!==n?n:0);void 0!==this.dataset.downscaleOnly&&(a=Math.max(a,null!==(o=null===(s=this.wrapperSize)||void 0===s?void 0:s.width)&&void 0!==o?o:0));const c=null===(r=this.svg)||void 0===r?void 0:r.querySelector(":scope > foreignObject");if(null==c||c.setAttribute("width",`${a}`),null==c||c.setAttribute("height",`${l}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${a} ${l}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=a<=0||l<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const o=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this.attachShadow({mode:"open"})}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_update(){const t=i?`<style>:host { ${i} }</style>`:"";let e="<slot></slot>";const{autoScaling:n}=this.dataset;if(void 0!==n){e=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===n?"data-downscale-only":""}>${e}</marp-auto-scaling>`}this.shadowRoot.innerHTML=t+e}};let r;const a=Symbol();let l;const c="marpitSVGPolyfill:setZoomFactor,",d=Symbol(),g=Symbol();const h=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[u]:[],i={then:e=>(t?(async()=>{if(void 0===l){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise((t=>{i.addEventListener("load",(()=>t()))}));i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),l=e.getImageData(5,5,1,1).data[3]<128}return l})().then((t=>{null==e||e(t?[u]:[])})):null==e||e([]),i)};return Object.assign(e,i)};let p,m;function u(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[g]||(Object.defineProperty(window,g,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",(({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(c)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(m=i)}}catch(t){console.error(t)}})));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,s,o,r;t.style.transform||(t.style.transform="translateZ(0)");const a=i||m||t.currentScale||1;p!==a&&(p=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(r=null===(o=n.y)||void 0===o?void 0:o.baseVal.value)&&void 0!==r?r:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}})),!1!==n&&Array.from(e.querySelectorAll("iframe"),(({contentWindow:t})=>{null==t||t.postMessage(`${c}${n}`,"null"===window.origin?"*":window.origin)}))}function v({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[d])return t[d];let e=!0;const i=()=>{e=!1,delete t[d]};Object.defineProperty(t,d,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await h()}finally{s=!0}})();const o=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(o)};return o(),i}(e);return t?(i(),()=>{}):i}p=1,m=void 0;const b=Symbol(),w=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,a=t[n].proto();null!=r||(r=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is")),r&&a!==HTMLElement?i||customElements.define(s,o(a,{style:t[n].style}),{extends:n}):(i||customElements.define(s,o(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach((t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)})))}window[a]=!0})(e),e[b])return e[b];const i=v({target:e}),n=()=>{i(),delete e[b]},l=Object.assign(n,{cleanup:n,update:()=>w(e)});return Object.defineProperty(e,b,{configurable:!0,value:l}),l},y=document.currentScript;w(y?y.getRootNode():document)}();
