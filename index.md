@@ -59,6 +59,7 @@ Yuan Chiu <chyuaner@gmail.com>
 反觀Linux......
 太自由導致規格太亂，很少有Linux發行版願意好好處理 (Manjaro正常安裝流程只處理到LUKS1)
 > 先問問有多少教學文都是叫你關SecureBoot就沒事了...😅
+
 ---
 
 ## 解密金鑰遺失風險
@@ -148,6 +149,7 @@ Manjaro Linux正常安裝流程中，有開啟硬碟加密選項，那安裝程�
 ---
 
 # TPM Trusted Platform Module
+
 需求上的主要目的：確認就是這一台電腦！！
 
 * 私鑰在TPM晶片內無法匯出，無法被偽造
@@ -155,10 +157,10 @@ Manjaro Linux正常安裝流程中，有開啟硬碟加密選項，那安裝程�
 
 * 現代電腦應該都有TPM晶片
 
-
---- 
+---
 
 ## TPM PCR
+
 * PCR 7: 只會檢查SecureBoot開關，已實測若在Live CD環境下，也會因為符合此條件而造成自動解鎖
     PS. 也呼應前面我所說的，SecureBoot其實有夠廢😂
 
@@ -258,7 +260,7 @@ UKI會將 Linux initramfs + vmlinuz + ucode整個打包，合併成一個 .efi �
 # Linux要啟用SecureBoot的方式有兩種
 
 <div class="columns">
-<div>
+<div id="left">
 
 ## 透過shim層
 * 對BIOS來說，是對shim啟動，然後由shim去啟動GRUB
@@ -267,7 +269,7 @@ UKI會將 Linux initramfs + vmlinuz + ucode整個打包，合併成一個 .efi �
 
 </div>
 
-<div>
+<div id="right">
 
 ## 不經過中介層，由BIOS直接啟動
 * 需要自行進BIOS設定，然後把你的簽名匯入進BIOS白名單
@@ -308,6 +310,7 @@ menuentry "Manjaro Linux (UKI linux-6.12.28-1)" --class manjaro {
 ```
 
 ---
+
 <!-- _backgroundImage: url(img/Screenshot_20250602_041116_結果.png) -->
 <!-- backgroundSize: contain -->
 <!-- backgroundPosition: 220% 0% -->
@@ -326,6 +329,7 @@ menuentry "Manjaro Linux (UKI linux-6.12.28-1)" --class manjaro {
 </div>
 
 ---
+
 # UKI 製作完成後
 ## 自動加入至GRUB開機選單
 使用方式：將`09_uki`複製到 `/etc/grub.d/` 裡面，
