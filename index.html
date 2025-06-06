@@ -789,14 +789,14 @@ section.lead h1, section.lead h2 {
 ;">
 <h1 id="linux%E8%A6%81%E5%95%9F%E7%94%A8secureboot%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%85%A9%E7%A8%AE">Linux要啟用SecureBoot的方式有兩種</h1>
 &lt;div class="columns"&gt;
-&lt;div&gt;
+&lt;div id="left"&gt;
 <h2 id="%E9%80%8F%E9%81%8Eshim%E5%B1%A4">透過shim層</h2>
 <ul>
 <li>對BIOS來說，是對shim啟動，然後由shim去啟動GRUB</li>
 <li>shim層自帶Microsoft簽名，可直接用於多數主機板，不需要額外更改BIOS設定</li>
 </ul>
 &lt;/div&gt;
-&lt;div&gt;
+&lt;div id="right"&gt;
 <h2 id="%E4%B8%8D%E7%B6%93%E9%81%8E%E4%B8%AD%E4%BB%8B%E5%B1%A4%E7%94%B1bios%E7%9B%B4%E6%8E%A5%E5%95%9F%E5%8B%95">不經過中介層，由BIOS直接啟動</h2>
 <ul>
 <li>需要自行進BIOS設定，然後把你的簽名匯入進BIOS白名單</li>
