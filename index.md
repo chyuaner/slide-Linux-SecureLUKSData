@@ -20,6 +20,7 @@ style: |
 
 ---
 <!-- _paginate: skip -->
+![bg right 65%](img/qrcode_url.svg)
 
 # 現代化開機與資料安全的Linux作業系統環境
 
@@ -28,7 +29,7 @@ LUKS2 + TPM + UKI .efi + SecureBoot
 以下都以Manjaro Linux (Arch Linux)為主
 
 
-Yuan Chiu <chyuaner@gmail.com>
+*Yuan Chiu <chyuaner@gmail.com>*
 
 ---
 
