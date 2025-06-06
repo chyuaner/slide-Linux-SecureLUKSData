@@ -2,6 +2,9 @@
 marp: true
 theme: default
 paginate: true
+footer: |
+    [[Github]](https://github.com/chyuaner/slide-Linux-SecureLUKSData) | [[PDF]](index.pdf) | [[PPTX]](index.pptx)
+
 style: |
     /* section {
         background-color: #ccc;
