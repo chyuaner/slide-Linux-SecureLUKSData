@@ -34,6 +34,11 @@ jobs:
         env:
           MARP_USER: root:root
 
+      - name: Remove Marp fragment animations
+        run: |
+          sed -i 's/\s\+data-marpit-fragment="[^"]*"//g' build/index.html
+          sed -i 's/\s\+data-bespoke-marp-fragment="[^"]*"//g' build/index.html
+
       - name: Marp Build (README.pdf)
         uses: docker://marpteam/marp-cli:v3.0.2
         with:
