@@ -310,7 +310,7 @@ menuentry "Manjaro Linux (UKI linux-6.12.28-1)" --class manjaro {
 ```
 
 ---
-
+<!-- html: true -->
 <!-- _backgroundImage: url(img/Screenshot_20250602_041116_結果.png) -->
 <!-- backgroundSize: contain -->
 <!-- backgroundPosition: 220% 0% -->
@@ -388,8 +388,10 @@ UKI .efi 基本上就是把cmdline完全封死！不接受任何外來開機參�
     * Clonezilla原則上只能還原到比原先容量更大的分割區
 
 ---
+<!-- html: true -->
 
 # 我的硬碟分割表設計
+
 <div class="columns">
 <div>
 處理前
