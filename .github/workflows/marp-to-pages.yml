@@ -28,9 +28,9 @@ jobs:
         run: if [[ -d img ]]; then cp -R img build/img; fi
 
       - name: Marp Build (README)
-        uses: docker://marpteam/marp-cli:v3.0.2
+        uses: docker://marpteam/marp-cli:v4.1.2
         with:
-          args: --html index.md -o build/index.html
+          args: index.md -o build/index.html
         env:
           MARP_USER: root:root
 
@@ -43,14 +43,14 @@ jobs:
           sed -i '/bespoke.bullets/d' build/index.html
 
       - name: Marp Build (README.pdf)
-        uses: docker://marpteam/marp-cli:v3.0.2
+        uses: docker://marpteam/marp-cli:v4.1.2
         with:
           args: index.md --allow-local-files -o build/index.pdf
         env:
           MARP_USER: root:root
 
       - name: Marp Build (README.pptx)
-        uses: docker://marpteam/marp-cli:v3.0.2
+        uses: docker://marpteam/marp-cli:v4.1.2
         with:
           args: index.md --allow-local-files -o build/index.pptx
         env:
@@ -62,7 +62,7 @@ jobs:
 
       - name: Marp Build (docs folder, if exists)
         if: steps.docs-folder-exists.outputs.has_docs == '0'
-        uses: docker://marpteam/marp-cli:v3.0.2
+        uses: docker://marpteam/marp-cli:v4.1.2
         with:
           args: -I docs/ -o build/docs/
         env:
