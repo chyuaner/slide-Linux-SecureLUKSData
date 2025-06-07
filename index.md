@@ -377,3 +377,40 @@ UKI .efi 基本上就是把cmdline完全封死！不接受任何外來開機參�
 * 對TPM PCR來說，這兩個是不同的環境。（前提是PCR規則不要只用PCR=7）
 * 可以把cmdline鎖死的**UKI模式，拿來與TPM+LUKS綁定用來開機自動解鎖**。
 * 若系統故障需要臨時下cmdline處理的話，就使用傳統initramfs模式。反正在傳統模式下，就算以開機參數強行繞過作業系統認證這層，但因為此模式不在TPM PCR接受的環境下，必定會先觸發LUKS的詢問解鎖傳統密碼擋下。
+
+---
+
+# 整個弄完之後...
+
+---
+
+# Secure Boot 可以常駐開了～
+![](img/Screenshot%202025-06-07%20at%2013-04-20%20如何啟用安全開機%20Dell%20台灣.png)
+
+---
+
+# 兩種啟動方式
+<div class="columns">
+<div>
+
+## UKI（新的常駐預設啟動方式）
+* 較安全：cmdline鎖死，不再接受外來開機參數
+* 綁定TPM+LUKS，開機時自動解鎖
+    * 反正還有作業系統層登入認證
+* 這份.efi有做簽名，可Secure Boot
+
+</div>
+<div>
+
+## 傳統initramfs
+* 保留傳統的Linux開機方式
+* 可接受cmdline開機參數，方便Debug用
+* 因無TPM綁定，開機會問LUKS解鎖密碼
+* 核心有做簽名，仍可Secure Boot
+
+</div>
+</div>
+
+---
+
+# 就醬，歡迎交流😀
