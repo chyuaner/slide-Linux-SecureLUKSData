@@ -175,6 +175,7 @@ Manjaro Linux正常安裝流程中，有開啟硬碟加密選項，那安裝程�
 ---
 
 # 將目前環境綁定到LUKS
+![bg right:32% contain](img/Screenshot_20250607_014130.png)
 
 ```
 sudo systemd-cryptenroll /dev/nvme1n1p3 --wipe-slot=tpm2 --tpm2-device=auto --tpm2-pcrs=4+5+7
