@@ -163,8 +163,9 @@ Manjaro Linux正常安裝流程中，有開啟硬碟加密選項，那安裝程�
 
 ## TPM PCR
 
-* PCR 7: 只會檢查SecureBoot開關，已實測若在Live CD環境下，也會因為符合此條件而造成自動解鎖
-    PS. 也呼應前面我所說的，SecureBoot其實有夠廢😂
+* PCR 7: 只會檢查SecureBoot開關。
+    - 已實測若在Live CD環境下，也會因為符合此條件而造成自動解鎖
+    - 也呼應前面我所說的，SecureBoot其實有夠廢😂
 
 * PCR 4+5+7 （我現在在用的）
     * PCR 4: 檢查當前作業系統核心環境
@@ -190,6 +191,7 @@ sudo systemd-cryptenroll /dev/nvme1n1p3 --wipe-slot=tpm2 --tpm2-device=auto --tp
     ```
 
 ---
+![bg right:55%](img/Screenshot_20250606_103127c.png)
 
 # 這樣就安全了嗎？你有沒有想到可以下開機參數繞過？
 然後又因為TPM環境條件成立而觸發LUKS自動解鎖
@@ -288,6 +290,25 @@ UKI會將 Linux initramfs + vmlinuz + ucode整個打包，合併成一個 .efi �
 3. 進入shim MOK Manger / BIOS SecureBoot設定，把你的簽章匯入
 4. 在BIOS設定把SecureBoot Enable，測試
 5. 掛上mkinitcpio/dracut hook，在日後安裝/升級Linux核心並產完UKI .efi後，自動把簽名加上去
+
+---
+
+# 將你的MOK簽章加入進白名單
+
+<div class="columns">
+<div id="left">
+
+## shim層
+![](img/Screenshot%202025-06-07%20at%2013-01-20%20secure.png)
+
+</div>
+
+<div id="right">
+
+## BIOS
+![](img/20250607_131617c.jpg)
+
+</div>
 
 ---
 
