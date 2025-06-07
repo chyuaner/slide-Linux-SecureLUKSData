@@ -220,17 +220,16 @@ sudo systemd-cryptenroll /dev/nvme1n1p3 --wipe-slot=tpm2 --tpm2-device=auto --tp
 * 那連同GRUB也一起加密...? 恩，前面有說GRUB還不支援LUKS2，LUKS1又不能綁TPM。
 
 ---
+![bg right:30%](img/20250607_131402c.jpg)
 
 # UKI Unified kernel image
 
 UKI會將 Linux initramfs + vmlinuz + ucode整個打包，合併成一個 .efi 映像檔
 
-* 不需經過GRUB這類的開機起動器引導，直接由BIOS就直接啟動Linux作業系統
+* 不需經過GRUB這類的開機起動器引導(理論上)，直接由BIOS就直接啟動Linux作業系統
     * 不過如果喜歡GRUB的話，還是可以由GRUB引導
-    * 但僅是理論，是因為若要啟用SecureBoot，情況又會不同，後述。
 * 從根本上直接把cmdline鎖死，不接受任何外來開機參數
 * 打包後還可以綁定加上簽章，進一步的支援SecureBoot開機！！
-    * 這就是我說，我本來沒有想要處理SecureBoot，但到了這一步就想說都已經這麼順便了，就來順便處理吧～
 
 ---
 
