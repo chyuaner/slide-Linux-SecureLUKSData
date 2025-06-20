@@ -1,6 +1,7 @@
 ---
 marp: true
 title: 現代化開機與資料安全的Linux作業系統環境
+image: cover.png
 theme: default
 paginate: true
 footer: |
