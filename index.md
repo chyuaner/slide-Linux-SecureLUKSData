@@ -5,7 +5,7 @@ image: img/cover.png
 theme: default
 paginate: true
 footer: |
-    [[Github]](https://github.com/chyuaner/slide-Linux-SecureLUKSData) | [[PDF]](index.pdf) | [[PPTX]](index.pptx) | https://yuaner.tw/v9eR2y
+    [[Github]](https://github.com/chyuaner/slide-Linux-SecureLUKSData) | [[PDF]](index.pdf) | [[PPTX]](index.pptx)
 
 style: |
     section.lead h1, section.lead h2 {
