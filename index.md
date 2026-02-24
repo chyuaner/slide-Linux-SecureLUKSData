@@ -32,6 +32,19 @@ LUKS2 + TPM + UKI .efi + SecureBoot
 
 ---
 
+# 資源連結索引
+
+我提供的資源
+
+* [適用於Manjaro的自動更新腳本（產生uki）](https://github.com/chyuaner/slide-Linux-SecureLUKSData/tree/main/resources)
+* [Grub 加入UKI檔案自動掃描的客製腳本（重點是09_uki）](https://github.com/chyuaner/grub.d-custom)
+
+重要參考連結
+* [Manjaro SecureBoot Setup Guide](https://gist.github.com/Jai-JAP/5d5d9f67f19e5e5eaf6825b371a17d5d)
+* [Enable SecureBoot in Manjaro](https://gist.github.com/junalmeida/13aadd6892ef6a119d0d229db341f382)
+
+---
+
 # 需求
 
 我平常會隨時帶筆電外出，而且筆電硬碟裡面有放敏感資料（個人證件、公司機密...等等）

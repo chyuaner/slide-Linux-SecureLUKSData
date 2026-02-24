@@ -1,0 +1,15 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Path
+Target = /efi/EFI/Manjaro/grubx64.efi
+
+[Action]
+Description = Signing GRUB with Machine Owner Key for Secure Boot
+When = PostTransaction
+Exec = /usr/share/secureboot/signGrub.sh ;
+Depends = sbsigntools
+Depends = findutils
+Depends = grep
+Depends = grub

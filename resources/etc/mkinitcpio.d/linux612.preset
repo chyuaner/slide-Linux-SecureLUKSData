@@ -1,0 +1,18 @@
+# mkinitcpio preset file for the '6.12-x86_64' package
+
+#ALL_config="/etc/mkinitcpio.conf"
+ALL_kver="/boot/vmlinuz-6.12-x86_64"
+#ALL_kerneldest="/boot/vmlinuz-6.12-x86_64"
+
+PRESETS=('default')
+#PRESETS=('default' 'fallback')
+
+#default_config="/etc/mkinitcpio.conf"
+default_image="/boot/initramfs-6.12-x86_64.img"
+#default_uki="/efi/EFI/Linux/manjaro-6.12-x86_64.efi"
+#default_options="--splash /usr/share/systemd/bootctl/splash-manjaro.bmp"
+
+#fallback_config="/etc/mkinitcpio.conf"
+#fallback_image="/boot/initramfs-6.12-x86_64-fallback.img"
+#fallback_uki="/efi/EFI/Linux/manjaro-6.12-x86_64-fallback.efi"
+#fallback_options="-S autodetect"
