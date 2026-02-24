@@ -45,11 +45,11 @@ LUKS2 + TPM + UKI .efi + SecureBoot
 
 ---
 
-# 先簡單自我介紹
+# Yuan Chiu 元兒～
 
-## Yuan Chiu 元兒～
 
 長期的Linux日常桌面、伺服器使用者
+
 
 <div class="columns">
 <div id="left">
