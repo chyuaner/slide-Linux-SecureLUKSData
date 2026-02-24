@@ -45,6 +45,35 @@ LUKS2 + TPM + UKI .efi + SecureBoot
 
 ---
 
+# 先簡單自我介紹
+
+## Yuan Chiu 元兒～
+
+長期的Linux日常桌面、伺服器使用者
+
+<div class="columns">
+<div id="left">
+
+近期桌面環境都以Arch Linux系列為主
+
+1. Ubuntu 8.04 開始到... 印象中是進入Unity桌面時期，應該有4年(?)
+2. Arch Linux 至少有4年以上
+3. macOS (雖然這不是Linux...😅)
+4. Manjaro 沿用至今 (至少有4年了)
+
+</div>
+
+<div id="right">
+
+近期伺服器都以Debian系列為主
+* Debian：用於需要高度穩定的重要用途
+* Ubuntu：需要比較新的軟體環境（像是有NodeJS需求）
+* 額外還有 FreeBSD、CentOS（Rocky Linux）、衍生版的Amazon Linux 2、Proxmox VE......
+
+</div>
+
+---
+
 # 需求
 
 我平常會隨時帶筆電外出，而且筆電硬碟裡面有放敏感資料（個人證件、公司機密...等等）
@@ -73,7 +102,7 @@ LUKS2 + TPM + UKI .efi + SecureBoot
 而且條件達成就會**預設啟用**
 
 反觀Linux......
-太自由導致規格太亂，很少有Linux發行版願意好好處理 (Manjaro正常安裝流程只處理到LUKS1)
+太自由導致規格太亂，僅有幾個主流的Linux發行版願意好好處理 (Manjaro正常安裝流程只處理到LUKS1)
 > 先問問有多少教學文都是叫你關SecureBoot就沒事了...😅
 
 ---
