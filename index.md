@@ -290,8 +290,20 @@ UKI會將 Linux initramfs + vmlinuz + ucode整個打包，合併成一個 .efi �
 # 產出UKI前要做的事
 
 * 開機參數要先設定好在 `/etc/kernel/cmdline`  （因為UKI .efi啟動不再依賴GRUB等外來開機參數，而且會直接鎖死）
-    * 可直接把GRUB的`GRUB_CMDLINE_LINUX_DEFAULT`抄過來
+    * 可直接把GRUB `/etc/default/grub`檔案的`GRUB_CMDLINE_LINUX_DEFAULT`抄過來
     * 有上LUKS加密的話，不能依賴 `/etc/crypttab` ，一定要把完整的加密掛載資訊全寫進 `/etc/kernel/cmdline` 裡（我在這個坑踩非常久🥲）
+
+---
+
+# 開機參數 `/etc/kernel/cmdline` 的範例
+
+```
+rd.luks.name=ab22d194-069b-4a16-ac1d-250a510a00cb=cryptroot 
+rd.luks.options=tpm2-device=auto,discard 
+root=/dev/mapper/cryptroot rootfstype=btrfs rootflags=subvol=/@ rw 
+resume=UUID=8b24fc1a-01c9-488f-9111-1db89c740744 resume_offset=238232832 
+udev.log_priority=3 nvidia-drm.modeset=1 splash
+```
 
 ---
 
@@ -299,7 +311,7 @@ UKI會將 Linux initramfs + vmlinuz + ucode整個打包，合併成一個 .efi �
 * 自行手動下命令產出
 * 掛上mkinitcpio/dracut hook，在日後安裝/升級Linux核心的時候，就自動產出對應的UKI
 * 產出 .efi 後，再來看你要不要順便在.efi加上簽名，這樣就可以啟用SecureBoot。
-![](img/Screenshot_20250605_102509.png)
+![](img/Screenshot_20260224_060359.png)
 
 ---
 
@@ -414,9 +426,9 @@ UKI .efi 基本上就是把cmdline完全封死！不接受任何外來開機參�
 
 ---
 
-# 改以UKI模式為預設開機以後，那傳統initramfs模式要？
+# 改以UKI模式為預設開機以後，那傳統模式要？
 ## 我的做法是：
-* UKI模式 與 傳統initramfs模式並存！！
+* UKI模式 與 傳統模式並存！！
 * 對TPM PCR來說，這兩個是不同的環境。（前提是PCR規則不要只用PCR=7）
 * 可以把cmdline鎖死的**UKI模式，拿來與TPM+LUKS綁定用來開機自動解鎖**。
 * 若系統故障需要臨時下cmdline處理的話，就使用傳統initramfs模式。反正在傳統模式下，就算以開機參數強行繞過作業系統認證這層，但因為此模式不在TPM PCR接受的環境下，必定會先觸發LUKS的詢問解鎖傳統密碼擋下。
@@ -445,7 +457,7 @@ UKI .efi 基本上就是把cmdline完全封死！不接受任何外來開機參�
 </div>
 <div>
 
-## 傳統initramfs
+## 傳統模式
 * 保留傳統的Linux開機方式
 * 可接受cmdline開機參數，方便Debug用
 * 因無TPM綁定，開機會問LUKS解鎖密碼
